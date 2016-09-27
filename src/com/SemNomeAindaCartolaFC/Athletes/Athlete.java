@@ -7,17 +7,16 @@ public class Athlete {
 	public Integer id;
 	public String nick;
 	public String photoURL;
-	public Float price;
-	public Float variation;
-	public Float mean;
+	public Double price;
+	public Double variation;
+	public Double mean;
 	public Integer gamesPlayed;
 	public Integer position_id;
-	public Float orderingKey;
+	public Double orderingKey;
 	
 	
 	public String toString() {		
 		JSONObject j = new JSONObject();
-		
 		j.put("name",name);
 		j.put("id",id);
 		j.put("nick",nick);

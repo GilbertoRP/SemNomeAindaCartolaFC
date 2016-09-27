@@ -3,7 +3,7 @@ package com.SemNomeAindaCartolaFC.Athletes;
 import java.util.ArrayList;
 
 public class AthletesContainer {
-	
+	//TODO: Add save file formatter to save results.
 	private String savePath;
 	
 	private ArrayList<Athlete> athletes = new ArrayList<Athlete>();

@@ -1,31 +1,34 @@
 package com.SemNomeAindaCartolaFC.Athletes;
 
+import org.json.*;
+
 public class Athlete {
-	private String name;
-	private Integer id;
-	private String nick;
-	private String photoURL;
-	private Float price;
-	private Float variation;
-	private Float mean;
-	private Integer gamesPlayed;
-	private Integer position_id;
-	private Float orderingKey;
+	public String name;
+	public Integer id;
+	public String nick;
+	public String photoURL;
+	public Float price;
+	public Float variation;
+	public Float mean;
+	public Integer gamesPlayed;
+	public Integer position_id;
+	public Float orderingKey;
 	
-	public Athlete(String name, Integer id) {
-		this.name = name;
-		this.id = id;
-	}
 	
-	public Float getMean() {
-		return this.mean;
-	}
-	
-	public Float getVariation() {
-		return this.variation;
-	}
-	
-	public Float getPrice() {
-		return this.price;
+	public String toString() {		
+		JSONObject j = new JSONObject();
+		
+		j.put("name",name);
+		j.put("id",id);
+		j.put("nick",nick);
+		j.put("photoURL",photoURL);
+		j.put("price",price);
+		j.put("variation",variation);
+		j.put("mean",mean);
+		j.put("gamesPlayed",gamesPlayed);
+		j.put("position_id",position_id);
+		j.put("orderingKey",orderingKey);
+		
+		return j.toString();
 	}
 }

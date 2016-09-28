@@ -6,16 +6,16 @@ public class AthleteFactory {
 	
 	public Athlete createAthleteFrom(JSONObject athleteData) {
 		Athlete athlete = new Athlete();
-		athlete.name = athleteData.getString("name");
-		athlete.id = athleteData.getInt("id");
-		athlete.nick = athleteData.getString("nick");
-		athlete.photoURL = athleteData.getString("photoURL");
-		athlete.price = athleteData.getDouble("price");
-		athlete.variation = athleteData.getDouble("variation");
-		athlete.mean = athleteData.getDouble("mean");
-		athlete.gamesPlayed = athleteData.getInt("gamesPlayed");
-		athlete.position_id = athleteData.getInt("position_id");
-		athlete.orderingKey = athleteData.getDouble("orderingKey");
+		athlete.name = athleteData.getString("nome");
+		athlete.id = athleteData.getInt("atleta_id");
+		athlete.nick = athleteData.getString("apelido");
+		athlete.photoURL = athleteData.getString("foto");
+		athlete.price = athleteData.getDouble("preco_num");
+		athlete.variation = athleteData.getDouble("variacao_num");
+		athlete.mean = athleteData.getDouble("media_num");
+		athlete.gamesPlayed = athleteData.getInt("jogos_num");
+		athlete.position_id = athleteData.getInt("posicao_id");
+		athlete.orderingKey = athlete.mean * 3 + athlete.variation * 2 + athlete.price * 1;
 		return athlete;
 	}
 }

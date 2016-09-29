@@ -1,12 +1,7 @@
 package com.SemNomeAindaCartolaFC.Athletes;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.file.*;
-import java.util.Optional;
-import java.util.Random;
-import java.util.function.Consumer;
+import java.io.*;
+import java.util.*;
 import java.util.stream.Stream;
 
 import org.json.*;
@@ -48,7 +43,7 @@ public class AthleteGenerator {
 		this.maxVariation = max;
 	}
 	
-	public void setMinMaxPoints(Double min, Double max) {
+	public void setMinMaxPrice(Double min, Double max) {
 		this.minPrice = min;
 		this.maxPrice = max;
 	}
@@ -58,30 +53,81 @@ public class AthleteGenerator {
 	}
 	
 	private void extractMinAndMaxFromBase() {
-		Path filePath = Paths.get(this.baseFullPath);
+		
+
 		try {
-			Stream<String> lines = Files.lines(filePath);
-			String jsonString = lines.reduce((line, lastLine) -> line + lastLine).get();			
-			parseJsonString(jsonString);			
+			JSONObject fullBase = BaseJSONParser.getJSONObjectFromFile(baseFullPath);
+			Athlete[] athletes = getAllAthletesFrom(fullBase);
+			Stream<Athlete> athleteStream = Arrays.stream(athletes);
+			Double minMean = getMinMean(athleteStream);
+			Double maxMean = getMaxMean(athleteStream);
+			Double minVariation = getMinVariation(athleteStream);
+			Double maxVariation = getMaxVariation(athleteStream);
+			Double minPrice = getMinPrice(athleteStream);
+			Double maxPrice = getMaxPrice(athleteStream);
+			
+			setMinMaxMean(minMean, maxMean);
+			setMinMaxVariation(minVariation, maxVariation);
+			setMinMaxPrice(minPrice, maxPrice);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	private void parseJsonString(String jsonString) {
-		JSONObject fullBase = new JSONObject(jsonString);
-		JSONArray atletasArray = fullBase.getJSONArray("atletas");
-		JSONObject firstAtleta = atletasArray.getJSONObject(0);
-		System.out.println(firstAtleta.toString());
-	}
-	
-	public static void main(String[] args) {
-		AthleteGenerator generator = new AthleteGenerator();
 		
-		generator.setBaseFullPath("/home/gilberto/Projects/SemNomeAindaCartolaFC/data/25-09-2016.json");
-		generator.extractMinAndMaxFromBase();
+	}
+	
+	private Double getMinMean(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.mean < lastAthlete.mean ? athlete : lastAthlete)
+				.get().mean;
+	}
+	
+	private Double getMaxMean(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.mean > lastAthlete.mean ? athlete : lastAthlete)
+				.get().mean;
+	}
+	
+	private Double getMinVariation(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.variation < lastAthlete.variation ? athlete : lastAthlete)
+				.get().variation;
+	}
+	
+	private Double getMaxVariation(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.variation > lastAthlete.variation ? athlete : lastAthlete)
+				.get().variation;
+	}	
+	
+	private Double getMinPrice(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.price < lastAthlete.price ? athlete : lastAthlete)
+				.get().price;
+	}
+	
+	private Double getMaxPrice(Stream<Athlete> athletes) {
+		return athletes
+				.reduce((athlete, lastAthlete) -> athlete.price > lastAthlete.price ? athlete : lastAthlete)
+				.get().price;
+	}
+	
+	private Athlete[] getAllAthletesFrom(JSONObject baseData) {
+		JSONArray atletasArray = baseData.getJSONArray("atletas");
+		int atletasArrayLength = atletasArray.length();
+		AthleteFactory factory = new AthleteFactory();
+		ArrayList<Athlete> allAthletes = new ArrayList<>();
+		
+		for(int i = 0; i < atletasArrayLength; i++) {
+			JSONObject athleteData = atletasArray.getJSONObject(i);
+			Athlete athlete = factory.createAthleteFrom(athleteData);
+			allAthletes.add(athlete);
+		}		
+		
+		
+		Athlete[] athletesFlatArray = new Athlete[allAthletes.size()];
+		return allAthletes.toArray(athletesFlatArray);
 	}
 
 }

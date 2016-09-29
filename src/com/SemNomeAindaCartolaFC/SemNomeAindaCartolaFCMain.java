@@ -6,12 +6,8 @@ public class SemNomeAindaCartolaFCMain {
 
 	static public void main(String[] args) {
 		
-		Athlete a = new Athlete();
-		a.name = "Gilberto Ribeiro";
-		a.id = 123123;
-		a.gamesPlayed = 10;
-		
-		
-		System.out.println("Hello World! " + a.toString());
+		AthleteGenerator generator = new AthleteGenerator();
+		generator.setBaseFullPath("/home/gilberto/Projects/SemNomeAindaCartolaFC/data/25-09-2016.json");
+		generator.generateAthlete();
 	}
 }

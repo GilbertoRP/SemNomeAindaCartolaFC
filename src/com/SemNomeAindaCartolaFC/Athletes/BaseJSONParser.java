@@ -1,5 +1,7 @@
 package com.SemNomeAindaCartolaFC.Athletes;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.stream.Stream;
@@ -7,16 +9,24 @@ import org.json.JSONObject;
 
 public class BaseJSONParser {
 	
-	public static JSONObject getJSONObjectFromFile(String stringFilePath) throws IOException {
+	public static JSONObject getJSONObjectFromFile(String jsonFilePath) throws IOException {
 
-		Path filePath = Paths.get(stringFilePath);
-		try(Stream<String> lines = Files.lines(filePath)){
-			String jsonString = lines.reduce((line, lastLine) -> line + lastLine).get();
-			return new JSONObject(jsonString);
+		String jsonString = BaseJSONParser.readAllLinesAsTextFromFile(jsonFilePath);
+		return new JSONObject(jsonString);
+	}
+
+	private static String readAllLinesAsTextFromFile(String filePath) {
+		StringBuilder builder = new StringBuilder();
+		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+			for(String line; (line = br.readLine()) != null; ) {
+				builder.append(line);
+			}
 		}
-		finally {
-			
+		catch (Exception e) {
+			e.printStackTrace();
 		}
+
+		return builder.toString();
 	}
 
 }

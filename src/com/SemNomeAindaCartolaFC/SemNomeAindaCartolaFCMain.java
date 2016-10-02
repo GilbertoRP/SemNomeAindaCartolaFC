@@ -8,8 +8,12 @@ public class SemNomeAindaCartolaFCMain {
 		
 		AthleteGenerator generator = new AthleteGenerator();
 		generator.setDataAndGetMinMaxForGeneration("/home/gilberto/Projects/SemNomeAindaCartolaFC/data/25-09-2016.json");
-		Athlete generated = generator.generateAthlete();
-                
-		System.out.println(generated.toString());
+
+		AthletesContainer container = new AthletesContainer();
+		Athlete[] generateds = generator.generateAthletesUpTo(10);
+		for(int i = 0; i < 10; i++) {
+			container.addAthlete(generateds[i]);
+		}
+
 	}
 }

@@ -15,7 +15,13 @@ public class AthletesContainer {
 	public void setTimeSavePath(String savePath) {
 		this.savePath = savePath;
 	}
-	
+
+	public void addAthletes(Athlete[] athletes) {
+		for(int i = 0; i < athletes.length; i++) {
+			this.addAthlete(athletes[i]);
+		}
+	}
+
 	public void addAthlete(Athlete athlete) {
 		athletes.add(athlete);
 	}

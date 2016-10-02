@@ -21,3 +21,4 @@ o que salvar no arquivo binário ordenados:
 
 ordenação categórica com base na chave de ordenação classificando por posição.
 
+- QUICK, HEAP, RADIX MSD, MERGE SORTS

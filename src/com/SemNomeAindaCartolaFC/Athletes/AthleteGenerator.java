@@ -2,8 +2,6 @@ package com.SemNomeAindaCartolaFC.Athletes;
 
 import java.util.*;
 
-import org.json.*;
-
 public class AthleteGenerator {
 
     private Double minMean = 0.0;
@@ -19,10 +17,6 @@ public class AthleteGenerator {
 
     private ArrayList<String> firstNames = new ArrayList<>();
     private ArrayList<String> lastNames = new ArrayList<>();
-
-    public AthleteGenerator() {
-
-    }
 
     public Athlete generateAthlete() {
         Athlete genAthlete = new Athlete();
@@ -58,60 +52,11 @@ public class AthleteGenerator {
         return (Athlete[]) athletes.toArray();
     }
 
-    public void setMinMaxMean(Double min, Double max) {
-        this.minMean = min;
-        this.maxMean = max;
-    }
-
-    public void setMinMaxVariation(Double min, Double max) {
-        this.minVariation = min;
-        this.maxVariation = max;
-    }
-
-    public void setMinMaxPrice(Double min, Double max) {
-        this.minPrice = min;
-        this.maxPrice = max;
-    }
-
-    public void setDataAndGetMinMaxForGeneration(String baseFilePath) {
-
-        try{
-            JSONObject fullBase = BaseJSONParser.getJSONObjectFromFile(baseFilePath);
-            extractDataForRandomSelection(fullBase);
-        }
-        catch(Exception jsonReadException) {
-            jsonReadException.printStackTrace();
-        }
-    }
-
-    public void setDataAndGetMinMaxForGeneration(JSONObject baseAsJson) {
-        extractDataForRandomSelection(baseAsJson);
-    }
-
-    private String getRandomFirstName() {
-        Integer index = genIntegerUpTo(firstNames.size());
-        return firstNames.get(index);
-    }
-
-    private String getRandomLastName() {
-        Integer index = genIntegerUpTo(lastNames.size());
-        return lastNames.get(index);
-    }
-
-    private Double genDoubleBetween(Double min, Double max) {
-        return (rand.nextDouble() % (max)) + min;
-    }
-    private Integer genIntegerUpTo(Integer max) {
-        return rand.nextInt(max);
-    }
-
-    private void extractDataForRandomSelection(JSONObject baseAsJson) {
+    public void extractDataForRandomSelection(Athlete[] athletesBase) {
 
         try {
 
-            Athlete[] athletes = getAllAthletesFrom(baseAsJson);
-
-            for (Athlete athlete : athletes) {
+            for (Athlete athlete : athletesBase) {
                 tryAddFistAndLastNamesForRandomSelectableList(athlete);
                 trySetMinMean(athlete);
                 trySetMaxMean(athlete);
@@ -127,6 +72,24 @@ public class AthleteGenerator {
             e.printStackTrace();
         }
 
+    }
+
+    private String getRandomFirstName() {
+        Integer index = genIntegerUpTo(firstNames.size());
+        return firstNames.get(index);
+    }
+
+    private String getRandomLastName() {
+        Integer index = genIntegerUpTo(lastNames.size());
+        return lastNames.get(index);
+    }
+
+    private Double genDoubleBetween(Double min, Double max) {
+        return (rand.nextDouble() % (max)) + min;
+    }
+
+    private Integer genIntegerUpTo(Integer max) {
+        return rand.nextInt(max);
     }
 
     private void tryAddFistAndLastNamesForRandomSelectableList(Athlete athlete) {
@@ -189,23 +152,6 @@ public class AthleteGenerator {
         if (athlete.gamesPlayed > this.maxGamesPlayed) {
             this.maxGamesPlayed = athlete.gamesPlayed;
         }
-    }
-
-    private Athlete[] getAllAthletesFrom(JSONObject baseData) {
-        JSONArray atletasArray = baseData.getJSONArray("atletas");
-        int atletasArrayLength = atletasArray.length();
-        AthleteFactory factory = new AthleteFactory();
-        ArrayList<Athlete> allAthletes = new ArrayList<>();
-
-        for (int i = 0; i < atletasArrayLength; i++) {
-            JSONObject athleteData = atletasArray.getJSONObject(i);
-            Athlete athlete = factory.createAthleteFrom(athleteData);
-            allAthletes.add(athlete);
-        }
-
-
-        Athlete[] athletesFlatArray = new Athlete[allAthletes.size()];
-        return allAthletes.toArray(athletesFlatArray);
     }
 
 }

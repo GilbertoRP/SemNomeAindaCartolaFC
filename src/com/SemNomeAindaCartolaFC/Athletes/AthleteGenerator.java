@@ -42,16 +42,6 @@ public class AthleteGenerator {
         return genAthlete;
     }
 
-    public Athlete[] generateAthletesUpTo(Integer number) {
-        ArrayList<Athlete> athletes = new ArrayList<>();
-        for(int i = 0; i < number; i++) {
-            Athlete athlete = generateAthlete();
-            athletes.add(athlete);
-        }
-
-        return (Athlete[]) athletes.toArray();
-    }
-
     public void extractDataForRandomSelection(Athlete[] athletesBase) {
 
         try {

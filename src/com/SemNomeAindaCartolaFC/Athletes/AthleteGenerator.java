@@ -13,6 +13,7 @@ public class AthleteGenerator {
     private Double minPrice = 0.0;
     private Double maxPrice = 0.0;
     private Integer lastId = 0;
+    private Integer maxGamesPlayed = 0;
 
     private Random rand = new Random();
 
@@ -31,14 +32,30 @@ public class AthleteGenerator {
         Double genVariation = genDoubleBetween(minVariation, maxVariation);
         Double genPrice = genDoubleBetween(minPrice, maxPrice);
         lastId = lastId + 1;
+        Integer genGamesPlayed = genIntegerUpTo(maxGamesPlayed);
+        Integer genPositionId = genIntegerUpTo(6) + 1;
 
         genAthlete.id = lastId;
         genAthlete.name = name;
+        genAthlete.nick = name;
         genAthlete.mean = genMean;
         genAthlete.variation = genVariation;
         genAthlete.price = genPrice;
+        genAthlete.gamesPlayed = genGamesPlayed;
+        genAthlete.position_id = genPositionId;
+        genAthlete.orderingKey = genAthlete.mean * 3 + genAthlete.variation * 2 + genAthlete.price * 1;
 
         return genAthlete;
+    }
+
+    public Athlete[] generateAthletesUpTo(Integer number) {
+        ArrayList<Athlete> athletes = new ArrayList<>();
+        for(int i = 0; i < number; i++) {
+            Athlete athlete = generateAthlete();
+            athletes.add(athlete);
+        }
+
+        return (Athlete[]) athletes.toArray();
     }
 
     public void setMinMaxMean(Double min, Double max) {
@@ -103,6 +120,7 @@ public class AthleteGenerator {
                 trySetMinPrice(athlete);
                 trySetMaxPrice(athlete);
                 trySetLastId(athlete);
+                trySetMaxGamesPlayed(athlete);
             }
 
         } catch (Exception e) {
@@ -164,6 +182,12 @@ public class AthleteGenerator {
     private void trySetLastId(Athlete athlete) {
         if (athlete.id > this.lastId) {
             this.lastId = athlete.id;
+        }
+    }
+
+    private void trySetMaxGamesPlayed(Athlete athlete) {
+        if (athlete.gamesPlayed > this.maxGamesPlayed) {
+            this.maxGamesPlayed = athlete.gamesPlayed;
         }
     }
 

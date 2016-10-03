@@ -20,19 +20,34 @@ public class SemNomeAindaCartolaFCMain {
 		PrintWriter output = new PrintWriter("resultados_SemNomeAinda.txt", "UTF-8");
 		AthleteFactory factory = new AthleteFactory("data/25-09-2016.json");
 
-		Athlete[] athletes = factory.createAthletesDataUpTo(1000);
+		int maxAthletes = 100000;
+		for(int upToAthletes = 100; upToAthletes <= maxAthletes; upToAthletes *= 10) {
 
+			Athlete[] athletes = factory.createAthletesDataUpTo(upToAthletes);
 
-		AthletesContainer container = new AthletesContainer();
-		container.setTimeFilePrinter(output);
-		container.addAthletes(athletes);
+			{
+				AthletesContainer container = new AthletesContainer();
+				container.setTimeFilePrinter(output);
+				container.addAthletes(athletes);
 
-		container.sortWith(new HeapSortAthletes());
-		ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
-		classifyAlgorithm.setName("HPST");
-		container.classifyByProperty(classifyAlgorithm);
+				container.sortWith(new HeapSortAthletes());
+				ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
+				classifyAlgorithm.setName("HPST");
+				container.classifyByProperty(classifyAlgorithm);
+			}
 
+			{
+				AthletesContainer container = new AthletesContainer();
+				container.setTimeFilePrinter(output);
+				container.addAthletes(athletes);
 
+				container.sortWith(new QuickSortAthletes());
+				ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
+				classifyAlgorithm.setName("QSRM");
+				container.classifyByProperty(classifyAlgorithm);
+			}
+
+		}
 
 		output.close();
 	}

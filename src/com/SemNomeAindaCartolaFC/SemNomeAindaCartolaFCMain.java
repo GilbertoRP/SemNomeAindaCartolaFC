@@ -25,17 +25,7 @@ public class SemNomeAindaCartolaFCMain {
 
 			Athlete[] athletes = factory.createAthletesDataUpTo(upToAthletes);
 
-			{
-				AthletesContainer container = new AthletesContainer();
-				container.setTimeFilePrinter(output);
-				container.addAthletes(athletes);
-
-				container.sortWith(new HeapSortAthletes());
-				ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
-				classifyAlgorithm.setName("HPST");
-				container.classifyByProperty(classifyAlgorithm);
-			}
-
+			//QUICKSORT
 			{
 				AthletesContainer container = new AthletesContainer();
 				container.setTimeFilePrinter(output);
@@ -47,6 +37,29 @@ public class SemNomeAindaCartolaFCMain {
 				container.classifyByProperty(classifyAlgorithm);
 			}
 
+			// HEAPSORT
+			{
+				AthletesContainer container = new AthletesContainer();
+				container.setTimeFilePrinter(output);
+				container.addAthletes(athletes);
+
+				container.sortWith(new HeapSortAthletes());
+				ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
+				classifyAlgorithm.setName("HPST");
+				container.classifyByProperty(classifyAlgorithm);
+			}
+
+			// RADIXMSDSORT
+			{
+				AthletesContainer container = new AthletesContainer();
+				container.setTimeFilePrinter(output);
+				container.addAthletes(athletes);
+
+				container.sortWith(new RadixMSDSortAthletes());
+				ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
+				classifyAlgorithm.setName("RMSD");
+				container.classifyByProperty(classifyAlgorithm);
+			}
 		}
 
 		output.close();

@@ -8,6 +8,7 @@ import java.util.*;
  */
 public class QuickSortAthletes implements SortAthletesAlgorithm{
 
+    Random rand = new Random();
 
     @Override
     public Athlete[] sort(Athlete[] athletes) {
@@ -17,11 +18,16 @@ public class QuickSortAthletes implements SortAthletesAlgorithm{
         return sortedList.toArray(new Athlete[sortedList.size()]);
     }
 
+    @Override
+    public String getName() {
+        return "QSRM";
+    }
+
     private ArrayList<Athlete> quickSort(List<Athlete> athletes) {
 
         if (athletes.size() <= 0) return new ArrayList<>();
         else {
-            Integer pivotIndex = athletes.size() / 2;
+            Integer pivotIndex = genIntegerUpTo(athletes.size());
             Athlete pivot = athletes.get(pivotIndex);
             List<Athlete> lower = getLessThan(pivotIndex, athletes);
             List<Athlete> greater = getGreaterOrEqualThan(pivotIndex, athletes);
@@ -31,6 +37,10 @@ public class QuickSortAthletes implements SortAthletesAlgorithm{
                 quickSort(greater)
             );
         }
+    }
+
+    private Integer genIntegerUpTo(Integer max) {
+        return rand.nextInt(max);
     }
 
     private ArrayList<Athlete> getLessThan(Integer pivotIndex, List<Athlete> athletes) {

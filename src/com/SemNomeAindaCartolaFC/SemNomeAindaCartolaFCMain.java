@@ -2,6 +2,8 @@ package com.SemNomeAindaCartolaFC;
 
 import com.SemNomeAindaCartolaFC.Athletes.*;
 
+import java.io.PrintWriter;
+
 public class SemNomeAindaCartolaFCMain {
 
 	static public void main(String[] args) throws Exception {
@@ -15,19 +17,23 @@ public class SemNomeAindaCartolaFCMain {
 		container.sort(new QuickSortAthletes);
 		// now the container has sorted all athletes...
 		* */
+		PrintWriter output = new PrintWriter("resultados_SemNomeAinda.txt", "UTF-8");
+		AthleteFactory factory = new AthleteFactory("data/25-09-2016.json");
 
-		AthleteFactory factory = new AthleteFactory("/home/gilberto/Projects/SemNomeAindaCartolaFC/data/25-09-2016.json");
 		Athlete[] athletes = factory.createAthletesDataUpTo(1000);
+
+
 		AthletesContainer container = new AthletesContainer();
+		container.setTimeFilePrinter(output);
 		container.addAthletes(athletes);
-		container.sortWith(new QuickSortAthletes());
 
-		Athlete[] orderedAthletes = container.getAthletes();
+		container.sortWith(new HeapSortAthletes());
+		ClassifyAthletesAlgorithm classifyAlgorithm = new ClassifyByPosition();
+		classifyAlgorithm.setName("HPST");
+		container.classifyByProperty(classifyAlgorithm);
 
-		System.out.printf("%-40s%s\n", "Nome", "Chave de Ordenação");
-		for(int i = 0; i < orderedAthletes.length; i++) {
-			Athlete athlete = orderedAthletes[i];
-			System.out.printf("%-40s%6f\n", athlete.name, athlete.orderingKey);
-		}
+
+
+		output.close();
 	}
 }

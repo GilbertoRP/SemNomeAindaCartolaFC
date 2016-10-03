@@ -2,5 +2,7 @@ package com.SemNomeAindaCartolaFC.Athletes;
 
 public interface ClassifyAthletesAlgorithm {
 
-	public Athlete[] classify(Athlete[] athletes);
+	Athlete[] classify(Athlete[] athletes);
+	void setName(String name);
+	String getName();
 }

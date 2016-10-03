@@ -2,6 +2,7 @@ package com.SemNomeAindaCartolaFC.Athletes;
 	
 import org.json.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AthleteFactory {
 
@@ -30,7 +31,7 @@ public class AthleteFactory {
 			}
 		}
 
-		return (Athlete[]) athletesRequested.toArray();
+		return athletesRequested.toArray(new Athlete[athletesRequested.size()]);
 	}
 
 	private ArrayList<Athlete> extractMaximumNumberOfAthletes(Athlete[] athletes, Integer request) {
@@ -60,7 +61,8 @@ public class AthleteFactory {
 			allAthletes.add(athlete);
 		}
 
-		return (Athlete[])allAthletes.toArray();
+		Athlete[] athletesArray = new Athlete[allAthletes.size()];
+		return allAthletes.toArray(athletesArray);
 	}
 
 	private Athlete createAthleteFrom(JSONObject athleteData) {

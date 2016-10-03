@@ -9,7 +9,7 @@ public class AthletesContainer {
 	private ArrayList<Athlete> athletes = new ArrayList<Athlete>();
 
 	public Athlete[] getAthletes() {
-		return (Athlete[]) this.athletes.toArray().clone();
+		return athletes.toArray(new Athlete[athletes.size()]).clone();
 	}
 	
 	public void setTimeSavePath(String savePath) {

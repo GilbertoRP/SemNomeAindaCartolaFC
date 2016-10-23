@@ -3,22 +3,28 @@ package com.SemNomeAindaCartolaFC.Athletes;
 import org.json.*;
 
 public class Athlete {
-	public String name;
+	
 	public Integer id;
+	public Integer position_id;
+	public Integer club_id;
+	public Integer status_id;
+	public String name;
 	public String nick;
 	public String photoURL;
 	public Double price;
 	public Double variation;
 	public Double mean;
-	public Integer gamesPlayed;
-	public Integer position_id;
+	public Integer gamesPlayed;	
 	public Double orderingKey;
 	
 	
 	public String toString() {		
 		JSONObject j = new JSONObject();
-		j.put("name",name);
+		
 		j.put("id",id);
+		j.put("position_id",position_id);
+		j.put("club_id",club_id);
+		j.put("name",name);
 		j.put("nick",nick);
 		j.put("photoURL",photoURL);
 		j.put("price",price);

@@ -91,5 +91,6 @@ public class QuickSortAthletes implements SortAthletesAlgorithm{
 
         return athletesConcat;
     }
+
 }
 

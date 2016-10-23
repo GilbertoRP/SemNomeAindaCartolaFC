@@ -1,12 +1,10 @@
 package com.SemNomeAindaCartolaFC.Athletes;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 public class AthletesContainer {
-	//TODO: Add save file formatter to save results.
-	private String savePath = null;
+
 	private PrintWriter writer = null;
 	
 	private ArrayList<Athlete> athletes = new ArrayList<Athlete>();
@@ -19,47 +17,41 @@ public class AthletesContainer {
 		this.writer = writer;
 	}
 
-	public void addAthletes(Athlete[] athletes) {
+	public void setAthletes(Athlete[] athletes) {
 		this.athletes.clear();
-		for(int i = 0; i < athletes.length; i++) {
-			this.addAthlete(athletes[i]);
-		}
-	}
-
-	public void addAthlete(Athlete athlete) {
-		athletes.add(athlete);
+		this.athletes.addAll(Arrays.asList(athletes));
 	}
 	
-	public AthletesContainer sortWith(SortAthletesAlgorithm sortAlgorithm) {
+	public Athlete[] sortWith(SortAthletesAlgorithm algorithm) {
 
 		long startTime = System.currentTimeMillis();
-
-		Athlete[] sortedAthletes = sortAlgorithm.sort(this.getAthletes());
-		this.replaceAllCurrentAthletesWith(sortedAthletes);
-
+		Athlete[] sortedAthletes = algorithm.sort(this.getAthletes());
 		long estimatedTime = System.currentTimeMillis() - startTime;
-		String result = String.format("%s, numerico, %d, %d", sortAlgorithm.getName(), sortedAthletes.length, estimatedTime);
+
+		String algorithmName = algorithm.getName();
+		int amountOfAthletes = sortedAthletes.length;
+		String format = "%s, numerico, %d, %d";
+
+		String result = String.format(format, algorithmName, amountOfAthletes, estimatedTime);
 		writer.println(result);
-		return this;
+
+		return sortedAthletes;
 	}
 	
-	public AthletesContainer classifyByProperty(ClassifyAthletesAlgorithm classifyAlgorithm) {
+	public Athlete[] classifyByProperty(ClassifyAthletesAlgorithm algorithm) {
 
 		long startTime = System.currentTimeMillis();
-
-		Athlete[] classifiedAthletes = classifyAlgorithm.classify(this.getAthletes());
-		this.replaceAllCurrentAthletesWith(classifiedAthletes);
-
+		Athlete[] classifiedAthletes = algorithm.classify(this.getAthletes());
 		long estimatedTime = System.currentTimeMillis() - startTime;
-		String result = String.format("%s, categorico, %d, %d", classifyAlgorithm.getName(), classifiedAthletes.length, estimatedTime);
+
+		String algorithmName = algorithm.getName();
+		int amountOfAthletes = classifiedAthletes.length;
+		String format = "%s, categorico, %d, %d";
+
+		String result = String.format(format, algorithmName, amountOfAthletes, estimatedTime);
 		writer.println(result);
-		return this;
+
+		return classifiedAthletes;
 	}
-	
-	private void replaceAllCurrentAthletesWith(Athlete[] newAthletes) {
-		for(int i = 0; i < newAthletes.length; i++) {
-			Athlete athleteAtIthIndex = newAthletes[i];
-			this.athletes.set(i, athleteAtIthIndex);
-		}
-	}
+
 }

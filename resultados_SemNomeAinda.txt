@@ -1,2 +1,0 @@
-QSRM, numerico, 100, 3
-QSRM, categorico, 100, 0

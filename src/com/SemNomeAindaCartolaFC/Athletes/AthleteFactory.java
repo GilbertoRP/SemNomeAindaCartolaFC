@@ -70,7 +70,9 @@ public class AthleteFactory {
 		athlete.name = athleteData.getString("nome");
 		athlete.id = athleteData.getInt("atleta_id");
 		athlete.nick = athleteData.getString("apelido");
-		//athlete.photoURL = athleteData.getString("foto");
+		athlete.club_id = athleteData.getInt("clube_id");
+		athlete.status_id = athleteData.getInt("status_id");		
+		athlete.photoURL = athleteData.isNull("foto") ? "" : athleteData.getString("foto");
 		athlete.price = athleteData.getDouble("preco_num");
 		athlete.variation = athleteData.getDouble("variacao_num");
 		athlete.mean = athleteData.getDouble("media_num");

@@ -1,8 +1,8 @@
 package com.SemNomeAindaCartolaFC.Athletes;
 
 import org.json.*;
-
-public class Athlete {
+import com.SemNomeAindaCartolaFC.DB.*;
+public class Athlete extends Identifiable {
 	
 	public Integer id;
 	public Integer position_id;
@@ -17,7 +17,10 @@ public class Athlete {
 	public Integer gamesPlayed;	
 	public Double orderingKey;
 	
-	
+	@Override
+	public Integer getId() {
+		return this.id;
+	}
 	public String toString() {		
 		JSONObject j = new JSONObject();
 		

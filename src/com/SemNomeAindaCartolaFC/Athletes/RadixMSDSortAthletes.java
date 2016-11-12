@@ -34,7 +34,8 @@ public class RadixMSDSortAthletes implements SortAthletesAlgorithm {
                 String padded = "000000000000000".substring(unpadded.length()) + unpadded;
 
                 char charAnalysed = padded.charAt(i);
-                if (charAnalysed == '.' || charAnalysed == '-') continue;
+                if (charAnalysed == '-' || charAnalysed == '.' || charAnalysed == ',') continue;
+                // System.out.println(charAnalysed);
                 int bucketIndex = Integer.parseInt("" + charAnalysed);
                 ArrayList<Athlete> selectionPosition = positions[bucketIndex];
 

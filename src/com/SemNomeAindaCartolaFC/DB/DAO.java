@@ -1,9 +1,10 @@
-import java.lang.*;
+package com.SemNomeAindaCartolaFC.DB;
 
-public class DAO {
-    
-    public DAO() {
+public class DAO<T extends Identifiable> {
+
+    public void insert() {
 
     }
 
+    
 }

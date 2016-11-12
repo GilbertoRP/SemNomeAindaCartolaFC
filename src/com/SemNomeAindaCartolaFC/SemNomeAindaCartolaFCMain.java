@@ -1,6 +1,7 @@
 package com.SemNomeAindaCartolaFC;
 
 import com.SemNomeAindaCartolaFC.Athletes.*;
+import com.SemNomeAindaCartolaFC.DB.*;
 
 import java.io.PrintWriter;
 
@@ -13,24 +14,27 @@ public class SemNomeAindaCartolaFCMain {
 		AthletesContainer container = new AthletesContainer();
 		container.setTimeFilePrinter(output);
 
+		DAO t = new DAO();
+		t.insert();
 
-		int maxAthletes = 100000;
-		for(int upToAthletes = 100; upToAthletes <= maxAthletes; upToAthletes *= 10) {
+		if (false) {
+			int maxAthletes = 100000;
+			for (int upToAthletes = 100; upToAthletes <= maxAthletes; upToAthletes *= 10) {
 
-			Athlete[] athletes = factory.createAthletesDataUpTo(upToAthletes);
+				Athlete[] athletes = factory.createAthletesDataUpTo(upToAthletes);
 
-			container.setAthletes(athletes);
-			container.setAthletes(QuickSortSorting(container));
-			container.setAthletes(ClassifyWithAlgorithm("QSRM", container));
-			container.setAthletes(HeapSortSorting(container));
-			container.setAthletes(ClassifyWithAlgorithm("HPST", container));
-			container.setAthletes(RadixMSDSorting(container));
-			container.setAthletes(ClassifyWithAlgorithm("RMSD", container));
+				container.setAthletes(athletes);
+				container.setAthletes(QuickSortSorting(container));
+				container.setAthletes(ClassifyWithAlgorithm("QSRM", container));
+				container.setAthletes(HeapSortSorting(container));
+				container.setAthletes(ClassifyWithAlgorithm("HPST", container));
+				container.setAthletes(RadixMSDSorting(container));
+				container.setAthletes(ClassifyWithAlgorithm("RMSD", container));
 
+			}
 
+			output.close();
 		}
-
-		output.close();
 	}
 
 	public static Athlete[] QuickSortSorting(AthletesContainer container) {

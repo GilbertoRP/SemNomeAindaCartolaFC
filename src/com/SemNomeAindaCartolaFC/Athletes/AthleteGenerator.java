@@ -20,6 +20,16 @@ public class AthleteGenerator {
 
     public Athlete generateAthlete() {
         Athlete genAthlete = new Athlete();
+        
+        ArrayList<Athlete> sepbyposition1 = new ArrayList<>(); 
+        ArrayList<Athlete> sepbyposition2 = new ArrayList<>(); 
+        ArrayList<Athlete> sepbyposition3 = new ArrayList<>(); 
+        ArrayList<Athlete> sepbyposition4 = new ArrayList<>(); 
+        ArrayList<Athlete> sepbyposition5 = new ArrayList<>(); 
+        ArrayList<Athlete> sepbyposition6 = new ArrayList<>(); 
+        
+        ArrayList<Athlete> sepbyclub = new ArrayList<>();
+        ArrayList<Athlete> newvet = new ArrayList<>();
 
         String name = String.format("%s %s", getRandomFirstName(), getRandomLastName());
         Double genMean = genDoubleBetween(minMean, maxMean);
@@ -38,7 +48,22 @@ public class AthleteGenerator {
         genAthlete.gamesPlayed = genGamesPlayed;
         genAthlete.position_id = genPositionId;
         genAthlete.orderingKey = genAthlete.mean * 3 + genAthlete.variation * 2 + genAthlete.price * 1;
-
+        
+        newvet.add(genAthlete) ;
+        
+        switch (genAthlete.position_id){
+            case 1: sepbyposition1.add(genAthlete); break;
+            case 2: sepbyposition2.add(genAthlete); break;
+            case 3: sepbyposition3.add(genAthlete); break;
+            case 4: sepbyposition4.add(genAthlete); break;
+            case 5: sepbyposition5.add(genAthlete); break;
+            case 6: sepbyposition6.add(genAthlete); break;
+        }
+        
+        //criar switch case para club_id
+        
+        
+        
         return genAthlete;
     }
 

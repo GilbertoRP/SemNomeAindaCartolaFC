@@ -2,7 +2,12 @@ package com.SemNomeAindaCartolaFC.Athletes;
 
 import org.json.*;
 import com.SemNomeAindaCartolaFC.DB.*;
-public class Athlete extends Identifiable {
+
+import java.io.Serializable;
+import java.lang.reflect.Field;
+
+
+public class Athlete extends DataIdentifiable implements Serializable {
 	
 	public Integer id;
 	public Integer position_id;
@@ -21,12 +26,50 @@ public class Athlete extends Identifiable {
 	public Integer getId() {
 		return this.id;
 	}
-	public String toString() {		
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	public String toFormatedField() throws IllegalAccessException {
+
+		String data = "";
+		Field[] fields = Athlete.class.getFields();
+
+		for(int i = 0; i < fields.length; i++) {
+			if (fields[i].get(this) != null) {
+				data += fields[i].get(this).toString();
+			}
+			else data += "null";
+
+			if (i < fields.length - 1) data += "|";
+		}
+
+		return data;
+	}
+
+	public static String toColumnFields() {
+		String fieldSet = "";
+		Field[] fields = Athlete.class.getFields();
+		for(int i = 0; i < fields.length; i++) {
+			fieldSet += fields[i].getName();
+
+			if (i < fields.length - 1) {
+				fieldSet += "|";
+			}
+		}
+
+		return fieldSet;
+	}
+
+	public String toString() {
 		JSONObject j = new JSONObject();
 		
 		j.put("id",id);
 		j.put("position_id",position_id);
 		j.put("club_id",club_id);
+		j.put("status_id",status_id);
 		j.put("name",name);
 		j.put("nick",nick);
 		j.put("photoURL",photoURL);

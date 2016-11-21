@@ -34,6 +34,11 @@ public class AthleteFactory {
 		return athletesRequested.toArray(new Athlete[athletesRequested.size()]);
 	}
 
+	public Athlete[] getAllAthletes() throws Exception {
+		JSONObject athletesJsonBase = BaseJSONParser.getJSONObjectFromFile(jsonBasePath);
+		return getAllAthletesFrom(athletesJsonBase);
+	}
+
 	private ArrayList<Athlete> extractMaximumNumberOfAthletes(Athlete[] athletes, Integer request) {
 		Integer maxNumberToExtract = getMinimun(athletes.length, request);
 

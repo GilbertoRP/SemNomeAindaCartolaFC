@@ -1,0 +1,6 @@
+Para compilar o projeto é necessário:
+ 1 - ter instalado no computador o Java 8 com as variáveis de ambiente devidamente configuradas;
+ 2 - ter instalado o maven (https://maven.apache.org/) e sua pasta "bin" deve estar no "PATH" como variável de ambiente;
+ 3 - navegar até a pasta do projeto e inserir o seguinte comando: mvn verify;
+Para executar:
+ 1 - inserir o comando: java -jar target\SemNomeAindaCartolaFC-0.0.1-SNAPSHOT-jar-with-dependencies.jar

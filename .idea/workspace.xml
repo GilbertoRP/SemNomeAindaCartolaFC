@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1cc4029-ef66-469c-b480-718fe1fa4afc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/COMO_COMPILAR.TXT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/athletes.db" afterPath="$PROJECT_DIR$/athletes.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clubs.db" afterPath="$PROJECT_DIR$/clubs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/positions.db" afterPath="$PROJECT_DIR$/positions.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/statuses.db" afterPath="$PROJECT_DIR$/statuses.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="SemNomeAindaCartolaFC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="COMO_COMPILAR.TXT" pinned="false" current-in-tab="true">
+      <file leaf-file-name="COMO_COMPILAR.TXT" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/COMO_COMPILAR.TXT">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -119,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java" />
         <option value="$PROJECT_DIR$/COMO_COMPILAR.TXT" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1043,6 +1049,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
           <folding />
         </state>
       </provider>

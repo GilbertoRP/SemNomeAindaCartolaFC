@@ -16,9 +16,4 @@ estrutura jogodor:
 chave de ordenação:
 - mean * 3 + variation * 2 + price * 1
 
-o que salvar no arquivo binário ordenados:
-- string
-
-ordenação categórica com base na chave de ordenação classificando por posição.
-
-- QUICK, HEAP, RADIX MSD, MERGE SORTS
+Manual de compilação está no arquivo: COMO_COMPILAR.TXT

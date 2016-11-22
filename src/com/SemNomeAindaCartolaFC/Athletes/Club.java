@@ -2,7 +2,9 @@ package com.SemNomeAindaCartolaFC.Athletes;
 
 import com.SemNomeAindaCartolaFC.DB.DataIdentifiable;
 
-public class Club extends DataIdentifiable {
+import java.io.Serializable;
+
+public class Club extends DataIdentifiable implements Serializable{
 
     public Integer id;
     public String name;

@@ -83,7 +83,7 @@ public class AthleteFactory {
 		athlete.mean = athleteData.getDouble("media_num");
 		athlete.gamesPlayed = athleteData.getInt("jogos_num");
 		athlete.position_id = athleteData.getInt("posicao_id");
-		athlete.orderingKey = athlete.mean * 3 + athlete.variation * 2 + athlete.price * 1;
+		athlete.orderingKey = Math.abs(athlete.mean * 3 + athlete.variation * 2 + athlete.price * 1);
 		return athlete;
 	}
 }

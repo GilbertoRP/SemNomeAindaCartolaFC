@@ -33,7 +33,9 @@ public class AthletesContainer {
 		String format = "%s, numerico, %d, %d";
 
 		String result = String.format(format, algorithmName, amountOfAthletes, estimatedTime);
-		writer.println(result);
+
+		if (writer != null)
+			writer.println(result);
 
 		return sortedAthletes;
 	}
@@ -49,7 +51,9 @@ public class AthletesContainer {
 		String format = "%s, categorico, %d, %d";
 
 		String result = String.format(format, algorithmName, amountOfAthletes, estimatedTime);
-		writer.println(result);
+
+		if (writer != null)
+			writer.println(result);
 
 		return classifiedAthletes;
 	}

@@ -21,7 +21,10 @@ public class Athlete extends DataIdentifiable implements Serializable {
 	public Double mean;
 	public Integer gamesPlayed;	
 	public Double orderingKey;
-	
+
+	private static final int SPACING = 12;
+	private static final int NAMESPACING = 60;
+
 	@Override
 	public Integer getId() {
 		return this.id;
@@ -38,12 +41,18 @@ public class Athlete extends DataIdentifiable implements Serializable {
 		Field[] fields = Athlete.class.getFields();
 
 		for(int i = 0; i < fields.length; i++) {
-			if (fields[i].get(this) != null) {
-				data += fields[i].get(this).toString();
-			}
-			else data += "null";
 
-			if (i < fields.length - 1) data += "|";
+			if (!fields[i].getName().equalsIgnoreCase("photoURL")) {
+
+				int CURRENTSPACING = fields[i].getName().equalsIgnoreCase("name") ? NAMESPACING : SPACING;
+
+				if (fields[i].get(this) != null) {
+					data += String.format("%" + CURRENTSPACING + "s",fields[i].get(this).toString());
+				}
+				else data += String.format("%" + CURRENTSPACING + "s","null");
+
+				if (i < fields.length - 1) data += "|";
+			}
 		}
 
 		return data;
@@ -53,10 +62,16 @@ public class Athlete extends DataIdentifiable implements Serializable {
 		String fieldSet = "";
 		Field[] fields = Athlete.class.getFields();
 		for(int i = 0; i < fields.length; i++) {
-			fieldSet += fields[i].getName();
 
-			if (i < fields.length - 1) {
-				fieldSet += "|";
+			if (!fields[i].getName().equalsIgnoreCase("photoURL")) {
+
+				int CURRENTSPACING = fields[i].getName().equalsIgnoreCase("name") ? NAMESPACING : SPACING;
+
+				fieldSet += String.format("%" + CURRENTSPACING + "s",fields[i].getName());
+
+				if (i < fields.length - 1) {
+					fieldSet += "|";
+				}
 			}
 		}
 

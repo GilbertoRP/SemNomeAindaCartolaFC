@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1cc4029-ef66-469c-b480-718fe1fa4afc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/Serializer.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AthleteGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/ddiscoverMinMax.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/Identifiable.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DataIdentifiable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SemNomeAindaCartolaFC.iml" afterPath="$PROJECT_DIR$/SemNomeAindaCartolaFC.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resultados_SemNomeAinda.txt" afterPath="$PROJECT_DIR$/resultados_SemNomeAinda.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByClub.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClubFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/PositionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/StatusFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/athletes.db" afterPath="$PROJECT_DIR$/athletes.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteFactory.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteGenerator.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthletesContainer.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthletesContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAO.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java" afterPath="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java" />
     </list>
@@ -41,8 +41,8 @@
       <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="101" column="37" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
+            <state relative-caret-position="382">
+              <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#327#328#0" expanded="true" />
@@ -52,28 +52,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataIdentifiable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DataIdentifiable.java">
+      <file leaf-file-name="SemNomeAindaCartolaFCMain.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="350">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3938#3939#0" expanded="true" />
+                <element signature="e#3971#3972#0" expanded="true" />
+                <element signature="e#8752#8753#0" expanded="true" />
+                <element signature="e#8780#8781#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemNomeAindaCartolaFCMain.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java">
+      <file leaf-file-name="QuickSortAthletes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2113#2114#0" expanded="true" />
-                <element signature="e#2146#2147#0" expanded="true" />
-                <element signature="e#3813#3814#0" expanded="true" />
-                <element signature="e#3841#3842#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,13 +103,21 @@
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/HeaderData.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAOHeader.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DataIdentifiable.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByStatus.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByClub.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthletesContainer.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/PositionFactory.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java" />
-        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java" />
-        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java" />
+        <option value="$PROJECT_DIR$/data/22-09-2016.json" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClubFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/StatusFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAO.java" />
-        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java" />
         <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java" />
+        <option value="$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java" />
       </list>
     </option>
   </component>
@@ -128,8 +136,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="22" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -593,7 +601,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="22" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -604,11 +612,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32860824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.213125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -676,10 +684,10 @@
           <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2146#2147#0" expanded="true" />
-            <element signature="e#3813#3814#0" expanded="true" />
-            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
+            <element signature="e#8752#8753#0" expanded="true" />
+            <element signature="e#8780#8781#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,9 +696,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -720,10 +726,10 @@
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2146#2147#0" expanded="true" />
-            <element signature="e#3813#3814#0" expanded="true" />
-            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
+            <element signature="e#8752#8753#0" expanded="true" />
+            <element signature="e#8780#8781#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,9 +738,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,40 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#296#297#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#236#237#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#311#312#0" expanded="false" />
-            <element signature="e#343#344#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/lang/reflect/Field.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -897,10 +867,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/25-09-2016.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594410">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClassifyByClub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding>
+            <element signature="e#1244#1245#0" expanded="false" />
+            <element signature="e#1276#1277#0" expanded="false" />
+            <element signature="e#1321#1322#0" expanded="false" />
+            <element signature="e#1348#1349#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthletesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="85" column="101" selection-start-line="85" selection-start-column="101" selection-end-line="85" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/PositionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Club.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#426#427#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/ClubFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/22-09-2016.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="40442" column="11" selection-start-line="40442" selection-start-column="5" selection-end-line="40442" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/StatusFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Status.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+            <element signature="e#397#398#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/DB/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="101" column="37" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
+        <state relative-caret-position="382">
+          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#327#328#0" expanded="true" />
@@ -909,42 +1000,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/AthleteFactory.java">
+    <entry file="file://$PROJECT_DIR$/data/23-10-2016.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="-597213">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/Athlete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="878">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/22-09-2016.json">
+    <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/Athletes/QuickSortAthletes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="42" />
+        <state relative-caret-position="408">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SemNomeAindaCartolaFC/SemNomeAindaCartolaFCMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+        <state relative-caret-position="350">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2146#2147#0" expanded="true" />
-            <element signature="e#3813#3814#0" expanded="true" />
-            <element signature="e#3841#3842#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
+            <element signature="e#8752#8753#0" expanded="true" />
+            <element signature="e#8780#8781#0" expanded="true" />
           </folding>
         </state>
       </provider>

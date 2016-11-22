@@ -32,9 +32,9 @@ public class QuickSortAthletes implements SortAthletesAlgorithm{
             List<Athlete> lower = getLessThan(pivotIndex, athletes);
             List<Athlete> greater = getGreaterOrEqualThan(pivotIndex, athletes);
             return concatenate(
-                quickSort(lower),
+                quickSort(greater),
                 pivot,
-                quickSort(greater)
+                quickSort(lower)
             );
         }
     }

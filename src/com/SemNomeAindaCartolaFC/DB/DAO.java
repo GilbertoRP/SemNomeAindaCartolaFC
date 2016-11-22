@@ -98,14 +98,14 @@ public class DAO<T extends DataIdentifiable> {
 
         List<T> temp = new ArrayList<T>();
 
-        for(int i = 0; i < max; i++) {
+        for(int i = 0; i < max && i < content.size(); i++) {
             temp.add(content.get(i));
         }
 
         return temp;
     }
 
-    private List<T> getCurrent() throws IOException, ClassNotFoundException {
+    public List<T> getCurrent() throws IOException, ClassNotFoundException {
 
         if (!Files.exists(Paths.get(this.fileName))){
             this.setCurrent(this.content);
